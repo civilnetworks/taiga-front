@@ -7,9 +7,9 @@
 FROM nginx:1.23-alpine
 LABEL maintainer="support@taiga.io"
 
-COPY docker/default.conf /etc/nginx/conf.d/default.conf
-COPY docker/conf.json.template /
-COPY docker/config_env_subst.sh /docker-entrypoint.d/30_config_env_subst.sh
+COPY default.conf /etc/nginx/conf.d/default.conf
+COPY conf.json.template /
+COPY config_env_subst.sh /docker-entrypoint.d/30_config_env_subst.sh
 
 RUN set -eux; \
     apk update; \
